@@ -20,9 +20,6 @@ var app = builder.Build();
 // Apply EF migrations in DB
 app.Services.ApplyMigration();
 
-// Apply EF migrations in DB
-MigrationManager.ApplyMigration(app.Services);
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

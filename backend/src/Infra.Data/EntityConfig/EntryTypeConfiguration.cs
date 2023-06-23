@@ -12,7 +12,12 @@ namespace Infra.Data.EntityConfig
             entity.HasKey(e => e.Id).HasName("entry_type_pk");
 
             entity.Property(e => e.Id).ValueGeneratedNever().HasColumnName("id");
-            entity.Property(e => e.Description).HasMaxLength(255).HasColumnName("description");
+            entity.Property(e => e.Description).HasMaxLength(255).HasColumnName("description");            
+
+            entity.HasData(
+                new EntryTypeModel { Id = 1, Description = "Incoming" },
+                new EntryTypeModel { Id = 2, Description = "Expense" }
+            );
         }
     }
 }

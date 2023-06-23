@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Infra.IoC
 {
     public static class MigrationManager
-    {        
+    {
         public static IServiceProvider ApplyMigration(this IServiceProvider serviceProvider)
         {
             using var scope = serviceProvider.CreateScope();

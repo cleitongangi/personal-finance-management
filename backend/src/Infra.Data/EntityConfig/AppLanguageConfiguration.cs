@@ -14,6 +14,11 @@ namespace Infra.Data.EntityConfig
             entity.Property(e => e.Id).ValueGeneratedNever().HasColumnName("id");
             entity.Property(e => e.Description).HasMaxLength(255).HasColumnName("description");
             entity.Property(e => e.IsDefault).HasColumnName("is_default");
+
+            entity.HasData(
+                new AppLanguageModel { Id = 1, Description = "English", IsDefault = true },
+                new AppLanguageModel { Id = 2, Description = "Portuguese", IsDefault = false }
+            );
         }
     }
 }

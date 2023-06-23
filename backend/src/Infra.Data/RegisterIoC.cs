@@ -14,7 +14,7 @@ namespace Infra.Data
         public static IServiceCollection AddDataServices(this IServiceCollection services, string dbCnnString)
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            //services.AddScoped<PersonalFinanceDbContext>();
+            services.AddScoped<PersonalFinanceDbContext>();
 
             services.AddDbContext<PersonalFinanceDbContext>(options =>
             {
