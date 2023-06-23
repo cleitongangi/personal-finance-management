@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  api:
+    image: ${DOCKER_REGISTRY-}api
+    build:
+      context: .
+      dockerfile: src/api/Dockerfile
+  personalFinanceDb:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: P3rsoNal
+    ports:     
+      - 5432:5432  
