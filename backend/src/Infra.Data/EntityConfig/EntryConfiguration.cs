@@ -13,12 +13,12 @@ namespace Infra.Data.EntityConfig
 
             entity.Property(e => e.Id).UseIdentityAlwaysColumn().HasColumnName("id");
             entity.Property(e => e.Active).HasColumnName("active");
-            entity.Property(e => e.Created).HasColumnType("timestamp with time zone").HasColumnName("created");
-            entity.Property(e => e.EntryDate).HasColumnType("timestamp with time zone").HasColumnName("entry_date");
+            entity.Property(e => e.Created).HasColumnType("timestamp without time zone").HasColumnName("created");
+            entity.Property(e => e.EntryDate).HasColumnType("timestamp without time zone").HasColumnName("entry_date");
             entity.Property(e => e.EntryTypeId).HasColumnName("entry_type_id");
             entity.Property(e => e.IssuerId).HasColumnName("issuer_id");
             entity.Property(e => e.Note).HasMaxLength(4000).HasColumnName("note");
-            entity.Property(e => e.Updated).HasColumnType("timestamp with time zone").HasColumnName("updated");
+            entity.Property(e => e.Updated).HasColumnType("timestamp without time zone").HasColumnName("updated");
             entity.Property(e => e.UserId).HasColumnName("user_id");
             entity.Property(e => e.Value).HasPrecision(12, 2).HasColumnName("value");
 
